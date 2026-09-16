@@ -15,3 +15,18 @@ def step_impl(context):
 def step_impl(context):
     assert context.stock.items[0].name == "glas"
     assert context.stock.items[0].amount == 6
+
+
+@given(u'Lagret har 6 st "glas"')
+def step_impl(context):
+    context.stock = Stock()
+    product = StockItem("glas",6)
+    context.stock.add_product(product)
+
+@when(u'Minskar antalet av "glas" med 2')
+def step_impl(context):
+    context.stock.decrease_product("glas", 2)
+
+@then(u'Det finns kvar 4 "glas" kvar på lagret.')
+def step_impl(context):
+    assert context.stock.items[0].amount == 4

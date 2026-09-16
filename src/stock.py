@@ -5,7 +5,7 @@ class Stock:
     def add_product(self, product):
         self.items.append(product)
 
-    def decrease_product(self, name):
+    def decrease_product(self, name, amount):
         for item in self.items:
             if item.name == name:
-                item.amount -= 1
+                item.amount -= amount
