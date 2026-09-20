@@ -14,6 +14,3 @@ class BankAccount:
 
     def add_interest(self):
         self.balance *= 1.05
-
-    def show_balance(self):
-        print(f"Saldo: {self.balance:.2f} kr")
